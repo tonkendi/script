@@ -1,0 +1,8 @@
+#! /bin/sh
+mount -o remount,rw / &> /dev/null
+wget -O /recalbox/scripts/rpi-exit-emu-1b.py https://gist.githubusercontent.com/DjLeChuck/445ce3d37f41f12d5bf8cb9482db4027/raw/46e92e76afb87a8d6e8d1be352730da37aa2dfc4/rpi-exit-emu-1b.py &> /dev/null
+wget -O /etc/init.d/S98exit-emu-1b https://gist.githubusercontent.com/DjLeChuck/5f798b0d4af4071a92111bf61703aeb1/raw/197a022608a5c357ea8da34540fc005d42c44b83/S98exit-emu-1b &> /dev/null
+chmod 755 /recalbox/scripts/rpi-exit-emu-1b.py &> /dev/null
+chmod 755 /etc/init.d/S98exit-emu-1b &> /dev/null
+/etc/init.d/S98exit-emu-1b start
+rm /recalbox/share/system/exit-emu-1b-installer &> /dev/null
